@@ -94,55 +94,60 @@
             <p class="text-lg text-gray-600">Découvrez nos livres les plus appréciés par nos lecteurs</p>
         </div>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
             @foreach($livres as $livre)
-            <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
-                <div class="relative">
-                    @if($livre->image_url)
-                        @if(filter_var($livre->image_url, FILTER_VALIDATE_URL))
-                            <img src="{{ $livre->image_url }}" alt="{{ $livre->titre }}" class="w-full h-56 object-cover">
-                        @else
-                            <img src="{{ asset('storage/'.$livre->image_url) }}" alt="{{ $livre->titre }}" class="w-full h-56 object-cover">
-                        @endif
-                    @else
-                        <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=698&q=80" alt="Image par défaut" class="w-full h-56 object-cover">
-                    @endif
-
-                    @if(!is_null($livre->rating))
-                        <div class="absolute top-2 right-2 bg-yellow-400 text-yellow-900 px-2 py-1 rounded-full text-xs font-semibold">
-                            ⭐ {{ number_format((float)$livre->rating, 1) }}
-                        </div>
-                    @endif
-
-                    @if(!is_null($livre->price) && $livre->price > 0)
-                        <div class="absolute bottom-2 left-2 bg-green-500 text-white px-2 py-1 rounded-lg text-xs font-semibold shadow-lg">
-                            💰 {{ number_format((float)$livre->price, 2) }} (MAD)
-                        </div>
-                    @elseif(!is_null($livre->price) && $livre->price == 0)
-                        <div class="absolute bottom-2 left-2 bg-blue-500 text-white px-2 py-1 rounded-lg text-xs font-semibold shadow-lg">
-                            🆓 Gratuit
-                        </div>
-                    @endif
-                </div>
-                <div class="p-4">
-                    <h3 class="text-lg font-semibold text-gray-900 mb-1 line-clamp-1">{{ $livre->titre }}</h3>
-                    <p class="text-sm text-gray-500 mb-3 line-clamp-2">{{ $livre->description }}</p>
-                    <div class="flex justify-between items-center">
-                        @php $disponible = (int)($livre->stock ?? 0) > 0; @endphp
-                        <span class="{{ $disponible ? 'text-green-600' : 'text-orange-600' }} text-sm font-medium">
-                            {{ $disponible ? 'Disponible' : 'Stock épuisé' }}
-                        </span>
-                        <div class="flex space-x-2">
-                            <a href="{{ route('livres.show', $livre->id_livre) }}" class="bg-emerald-600 hover:bg-emerald-700 text-white px-3 py-1 rounded text-sm transition-colors duration-200">Détails</a>
-                            @if($disponible)
-                                <a href="{{ route('emprunts.create', $livre->id_livre) }}" class="bg-green-600 hover:bg-green-700 text-white px-3 py-1 rounded text-sm transition-colors duration-200">Emprunter</a>
+                <div class="relative group bg-white/70 backdrop-blur-2xl border-l-8 border-emerald-400 rounded-3xl shadow-2xl overflow-visible transition-transform duration-300 hover:scale-105 hover:shadow-emerald-400/40 hover:bg-white/90" style="box-shadow: 0 8px 32px 0 rgba(16, 185, 129, 0.18);">
+                    <div class="flex flex-col items-center pt-8 pb-4 px-4 relative">
+                        <div class="absolute -left-8 top-8 h-20 w-2 rounded-full bg-gradient-to-b from-emerald-400 to-lime-300 shadow-lg"></div>
+                        <div class="-mt-12 mb-2 z-10">
+                            @if($livre->image_url)
+                                @if(filter_var($livre->image_url, FILTER_VALIDATE_URL))
+                                    <img src="{{ $livre->image_url }}" alt="{{ $livre->titre }}" class="w-24 h-24 object-cover rounded-full border-4 border-white shadow-lg bg-emerald-50">
+                                @else
+                                    <img src="{{ asset('storage/'.$livre->image_url) }}" alt="{{ $livre->titre }}" class="w-24 h-24 object-cover rounded-full border-4 border-white shadow-lg bg-emerald-50">
+                                @endif
                             @else
-                                <a href="{{ route('reservation.create', $livre->id_livre) }}" class="bg-orange-500 hover:bg-orange-600 text-white px-3 py-1 rounded text-sm transition-colors duration-200">Réserver</a>
+                                <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=698&q=80" alt="Image par défaut" class="w-24 h-24 object-cover rounded-full border-4 border-white shadow-lg bg-emerald-50">
                             @endif
                         </div>
+                        @if(!is_null($livre->rating))
+                            <div class="absolute top-4 right-4 bg-yellow-400/90 text-yellow-900 px-3 py-1 rounded-2xl text-xs font-extrabold shadow-lg border-2 border-yellow-200 flex items-center gap-1">
+                                <svg class="w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.967a1 1 0 00.95.69h4.175c.969 0 1.371 1.24.588 1.81l-3.38 2.455a1 1 0 00-.364 1.118l1.287 3.966c.3.922-.755 1.688-1.54 1.118l-3.38-2.454a1 1 0 00-1.175 0l-3.38 2.454c-.784.57-1.838-.196-1.54-1.118l1.287-3.966a1 1 0 00-.364-1.118L2.05 9.394c-.783-.57-.38-1.81.588-1.81h4.175a1 1 0 00.95-.69l1.286-3.967z"/></svg>
+                                {{ number_format((float)$livre->rating, 1) }}
+                            </div>
+                        @endif
+                        @if(!is_null($livre->price) && $livre->price > 0)
+                            <div class="absolute top-4 left-4 bg-gradient-to-r from-emerald-400 to-lime-400 text-white px-3 py-1 rounded-2xl text-xs font-extrabold shadow-lg border-2 border-emerald-200 flex items-center gap-1">
+                                <svg class="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 1.343-3 3s1.343 3 3 3 3-1.343 3-3-1.343-3-3-3zm0 9c-3.866 0-7-3.134-7-7s3.134-7 7-7 7 3.134 7 7-3.134 7-7 7z"/></svg>
+                                {{ number_format((float)$livre->price, 2) }} MAD
+                            </div>
+                        @elseif(!is_null($livre->price) && $livre->price == 0)
+                            <div class="absolute top-4 left-4 bg-gradient-to-r from-fuchsia-500 to-pink-400 text-white px-3 py-1 rounded-2xl text-xs font-extrabold shadow-lg border-2 border-fuchsia-200 flex items-center gap-1">
+                                <svg class="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 1.343-3 3s1.343 3 3 3 3-1.343 3-3-1.343-3-3-3zm0 9c-3.866 0-7-3.134-7-7s3.134-7 7-7 7 3.134 7 7-3.134 7-7 7z"/></svg>
+                                Gratuit
+                            </div>
+                        @endif
+                        <h3 class="text-lg font-extrabold text-emerald-900 mt-2 mb-1 line-clamp-1 drop-shadow-lg text-center">{{ $livre->titre }}</h3>
+                        <p class="text-sm text-gray-700 mb-2 line-clamp-2 font-medium text-center">{{ $livre->description }}</p>
+                    </div>
+                    <div class="flex flex-col gap-2 px-4 pb-4">
+                        @php $disponible = (int)($livre->stock ?? 0) > 0; @endphp
+                        <span class="mx-auto {{ $disponible ? 'bg-gradient-to-r from-emerald-200 to-lime-200 text-emerald-900' : 'bg-gradient-to-r from-orange-200 to-yellow-200 text-orange-900' }} px-4 py-1 rounded-2xl text-xs font-extrabold shadow border border-emerald-100 mb-2">{{ $disponible ? 'Disponible' : 'Stock épuisé' }}</span>
+                    </div>
+                    <div class="sticky bottom-0 left-0 w-full bg-white/80 backdrop-blur-lg rounded-b-3xl px-4 py-3 flex justify-center gap-3 border-t border-emerald-100 z-20">
+                        <a href="{{ route('livres.show', $livre->id_livre) }}" class="bg-gradient-to-r from-fuchsia-500 to-pink-500 hover:from-fuchsia-600 hover:to-pink-600 text-white px-4 py-2 rounded-full text-sm font-bold uppercase shadow-md transition-all duration-200 border-2 border-white/60">Détails</a>
+                        @if($disponible)
+                            <a href="{{ route('emprunts.create', $livre->id_livre) }}"
+                                class="bg-gradient-to-r from-emerald-500 to-lime-500 hover:from-emerald-600 hover:to-lime-600 text-white px-4 py-2 rounded-full text-sm font-bold uppercase shadow-md transition-all duration-200 border-2 border-white/60">
+                                Emprunter
+                            </a>
+                        @else
+                            <a href="{{ route('reservation.create', $livre->id_livre) }}" class="bg-gradient-to-r from-orange-500 to-yellow-400 hover:from-orange-600 hover:to-yellow-500 text-white px-4 py-2 rounded-full text-sm font-bold uppercase shadow-md transition-all duration-200 border-2 border-white/60">
+                                Réserver
+                            </a>
+                        @endif
                     </div>
                 </div>
-            </div>
             @endforeach
         </div>
 
@@ -161,7 +166,7 @@
                 <!-- Déco en arrière-plan -->
                 <div class="absolute -top-8 -right-8 w-40 h-40 bg-gradient-to-tr from-emerald-400 to-cyan-500 rounded-full blur-3xl opacity-20"></div>
                 <div class="absolute -bottom-8 -left-8 w-40 h-40 bg-gradient-to-tr from-indigo-400 to-purple-500 rounded-full blur-3xl opacity-20"></div>
-    
+
                 <div class="relative text-center">
                     <div class="flex justify-center mb-6">
                         <div class="bg-gradient-to-r from-emerald-500 to-cyan-500 p-4 rounded-2xl shadow-lg">
@@ -178,14 +183,14 @@
                     </p>
                 </div>
             </div>
-    
+
             <!-- Reste de la section -->
             <div class="max-w-4xl mx-auto">
                 <!-- Loading, Results, Error sections (inchangés) -->
             </div>
         </div>
     </div>
-    
+
 
 </div>
 

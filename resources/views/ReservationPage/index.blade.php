@@ -3,11 +3,11 @@
 @section('title', 'Mes Réservations - Bibliothèque ISIC')
 
 @section('content')
-<div class="min-h-screen bg-gray-50">
+<div class="min-h-screen bg-gradient-to-br from-emerald-50 via-green-100 to-emerald-200">
     <!-- Flash Messages -->
     @if(session('success'))
         <div class="fixed top-20 left-1/2 transform -translate-x-1/2 z-50 w-full max-w-md" x-data="{ show: true }" x-show="show" x-init="setTimeout(() => show = false, 5000)">
-            <div class="bg-green-50 border border-green-200 text-green-800 px-4 py-3 rounded-lg shadow-lg">
+            <div class="bg-emerald-100 border border-emerald-300 text-emerald-900 px-4 py-3 rounded-xl shadow-2xl ring-2 ring-emerald-200">
                 <div class="flex items-center">
                     <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
                         <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
@@ -25,7 +25,7 @@
 
     @if(session('error'))
         <div class="fixed top-20 left-1/2 transform -translate-x-1/2 z-50 w-full max-w-md" x-data="{ show: true }" x-show="show" x-init="setTimeout(() => show = false, 5000)">
-            <div class="bg-red-50 border border-red-200 text-red-800 px-4 py-3 rounded-lg shadow-lg">
+            <div class="bg-red-100 border border-red-300 text-red-900 px-4 py-3 rounded-xl shadow-2xl ring-2 ring-red-200">
                 <div class="flex items-center">
                     <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
                         <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd"></path>
@@ -42,14 +42,14 @@
     @endif
 
     <!-- Hero Section -->
-    <div class="bg-gradient-to-r from-purple-600 to-pink-600 text-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <div class="bg-gradient-to-r from-emerald-600 via-lime-500 to-green-600 text-white shadow-2xl">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
             <div class="text-center">
-                <h1 class="text-4xl font-extrabold sm:text-5xl md:text-6xl">
-                    Mes Réservations
+                <h1 class="text-4xl font-extrabold sm:text-5xl md:text-6xl drop-shadow-lg">
+                    <span class="bg-gradient-to-r from-lime-300 via-emerald-400 to-green-500 bg-clip-text text-transparent">Mes Réservations</span>
                 </h1>
-                <p class="mt-6 max-w-2xl mx-auto text-xl text-purple-100">
-                    Gérez vos réservations de livres et suivez leur statut
+                <p class="mt-6 max-w-2xl mx-auto text-xl text-emerald-100 font-medium">
+                    Gérez vos réservations de livres et suivez leur statut en toute simplicité
                 </p>
             </div>
         </div>
@@ -58,23 +58,23 @@
     <!-- Main Content -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <!-- Header with Stats -->
-        <div class="bg-white rounded-xl shadow-lg p-6 mb-8">
+    <div class="bg-gradient-to-br from-emerald-50 via-green-100 to-emerald-200 rounded-2xl shadow-2xl p-8 mb-10 border border-emerald-200 ring-1 ring-emerald-100">
             <div class="flex flex-col md:flex-row md:items-center md:justify-between">
                 <div>
-                    <h2 class="text-2xl font-bold text-gray-900 flex items-center">
+                    <h2 class="text-2xl font-extrabold text-emerald-900 flex items-center tracking-tight">
                         @if(Auth::user()->role === 'admin')
-                            <svg class="w-8 h-8 text-purple-600 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <svg class="w-8 h-8 text-emerald-600 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                             </svg>
                             Gestion des réservations
                         @else
-                            <svg class="w-8 h-8 text-purple-600 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <svg class="w-8 h-8 text-emerald-600 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                             </svg>
                             Vos réservations
                         @endif
                     </h2>
-                    <p class="text-gray-600 mt-1">
+                    <p class="text-green-700 mt-1">
                         @if(Auth::user()->role === 'admin')
                             Consultez et gérez toutes les réservations de la bibliothèque
                         @else
@@ -83,7 +83,7 @@
                     </p>
                 </div>
                 <div class="mt-4 md:mt-0">
-                    <a href="{{ route('livres.index') }}" class="inline-flex items-center px-4 py-2 bg-purple-600 hover:bg-purple-700 text-white rounded-lg transition-colors duration-200">
+                    <a href="{{ route('livres.index') }}" class="inline-flex items-center px-4 py-2 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg shadow-md transition-colors duration-200">
                         <svg class="w-4 h-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
                         </svg>
@@ -95,10 +95,10 @@
 
         <!-- Reservations List -->
         @if($reservations->count() > 0)
-            <div class="grid gap-6">
+            <div class="grid gap-8">
                 @foreach($reservations as $reservation)
-                    <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
-                        <div class="p-6">
+                    <div class="bg-gradient-to-br from-emerald-50 via-green-100 to-emerald-200 rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl border border-emerald-200 ring-1 ring-emerald-100 transition-shadow duration-300">
+                        <div class="p-8">
                             <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between">
                                 <!-- Book Info -->
                                 <div class="flex items-start space-x-4 flex-1">
@@ -106,39 +106,39 @@
                                     <div class="flex-shrink-0">
                                         <img src="{{ filter_var($reservation->livre->image_url, FILTER_VALIDATE_URL) ? $reservation->livre->image_url : asset('storage/'.$reservation->livre->image_url) }}"
                                              alt="{{ $reservation->livre->titre }}"
-                                             class="w-16 h-20 object-cover rounded-lg shadow-md"
+                                             class="w-20 h-28 object-cover rounded-xl shadow-lg border-2 border-emerald-200 bg-white"
                                              onerror="this.src='{{ asset('images/default-book.jpg') }}'">
                                     </div>
 
                                     <!-- Book Details -->
                                     <div class="flex-1 min-w-0">
-                                        <h3 class="text-lg font-semibold text-gray-900 mb-1">{{ $reservation->livre->titre }}</h3>
-                                        <p class="text-gray-600 mb-2">{{ $reservation->livre->auteur }}</p>
+                                        <h3 class="text-xl font-bold text-emerald-900 mb-1">{{ $reservation->livre->titre }}</h3>
+                                        <p class="text-green-700 mb-2">{{ $reservation->livre->auteur }}</p>
 
                                         <!-- Reservation Details -->
                                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
                                             <div>
-                                                <span class="text-gray-500">Date de réservation :</span>
-                                                <span class="font-medium text-gray-900">{{ \Carbon\Carbon::parse($reservation->date_reservation)->format('d/m/Y') }}</span>
+                                                <span class="text-green-700">Date de réservation :</span>
+                                                <span class="font-semibold text-emerald-900">{{ \Carbon\Carbon::parse($reservation->date_reservation)->format('d/m/Y') }}</span>
                                             </div>
                                             <div>
-                                                <span class="text-gray-500">Statut :</span>
+                                                <span class="text-green-700">Statut :</span>
                                                 @if($reservation->status === 'en_attente')
-                                                    <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-yellow-100 text-yellow-800">
+                                                    <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-yellow-100 text-yellow-800 shadow-sm">
                                                         <svg class="w-3 h-3 mr-1" fill="currentColor" viewBox="0 0 20 20">
                                                             <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"></path>
                                                         </svg>
                                                         En attente
                                                     </span>
                                                 @elseif($reservation->status === 'confirmee')
-                                                    <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">
+                                                    <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-emerald-100 text-emerald-800 shadow-sm">
                                                         <svg class="w-3 h-3 mr-1" fill="currentColor" viewBox="0 0 20 20">
                                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
                                                         </svg>
                                                         Confirmée
                                                     </span>
                                                 @elseif($reservation->status === 'annulee')
-                                                    <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-red-100 text-red-800">
+                                                    <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-red-100 text-red-800 shadow-sm">
                                                         <svg class="w-3 h-3 mr-1" fill="currentColor" viewBox="0 0 20 20">
                                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293-4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
                                                         </svg>
@@ -149,15 +149,15 @@
 
                                             @if(Auth::user()->role === 'admin')
                                             <div>
-                                                <span class="text-gray-500">Adhérent :</span>
+                                                <span class="text-green-700">Adhérent :</span>
                                                 <div class="flex items-center mt-1">
-                                                    <div class="w-6 h-6 bg-purple-100 rounded-full flex items-center justify-center mr-2">
-                                                        <svg class="w-3 h-3 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                    <div class="w-6 h-6 bg-emerald-100 rounded-full flex items-center justify-center mr-2">
+                                                        <svg class="w-3 h-3 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                                                         </svg>
                                                     </div>
-                                                    <span class="font-medium text-gray-900">{{ $reservation->adherent->nom ?? 'Adhérent inconnu' }}</span>
-                                                    <span class="text-xs text-gray-500 ml-2">(ID: {{ $reservation->id_adherent }})</span>
+                                                    <span class="font-semibold text-emerald-900">{{ $reservation->adherent->nom ?? 'Adhérent inconnu' }}</span>
+                                                    <span class="text-xs text-green-700 ml-2">(ID: {{ $reservation->id_adherent }})</span>
                                                 </div>
                                             </div>
                                             @endif
@@ -167,8 +167,8 @@
 
                                                                  <!-- Actions -->
                                  <div class="flex flex-col sm:flex-row gap-2 mt-4 lg:mt-0 lg:ml-6">
-                                     <a href="{{ route('livres.show', $reservation->livre->id_livre) }}"
-                                        class="inline-flex items-center justify-center px-4 py-2 border border-gray-300 rounded-lg text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 transition-colors duration-200">
+                                                 <a href="{{ route('livres.show', $reservation->livre->id_livre) }}"
+                                                     class="inline-flex items-center justify-center px-4 py-2 border border-emerald-300 rounded-lg text-sm font-semibold text-emerald-700 bg-white hover:bg-emerald-50 shadow transition-colors duration-200">
                                          <svg class="w-4 h-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
@@ -183,7 +183,7 @@
                                              <div x-data="{ showConfirmAccept: false }" class="inline">
                                                  <button type="button"
                                                          @click="showConfirmAccept = true"
-                                                         class="inline-flex items-center justify-center px-4 py-2 border border-green-300 rounded-lg text-sm font-medium text-green-700 bg-white hover:bg-green-50 transition-colors duration-200">
+                                                         class="inline-flex items-center justify-center px-4 py-2 border border-emerald-400 rounded-lg text-sm font-semibold text-emerald-700 bg-white hover:bg-emerald-50 shadow transition-colors duration-200">
                                                      <svg class="w-4 h-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
                                                      </svg>
@@ -251,7 +251,7 @@
                                              <div x-data="{ showConfirmRemettre: false }" class="inline">
                                                  <button type="button"
                                                          @click="showConfirmRemettre = true"
-                                                         class="inline-flex items-center justify-center px-4 py-2 border border-yellow-300 rounded-lg text-sm font-medium text-yellow-700 bg-white hover:bg-yellow-50 transition-colors duration-200">
+                                                         class="inline-flex items-center justify-center px-4 py-2 border border-lime-400 rounded-lg text-sm font-semibold text-lime-700 bg-white hover:bg-lime-50 shadow transition-colors duration-200">
                                                      <svg class="w-4 h-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                                                      </svg>
@@ -319,7 +319,7 @@
                                              <div x-data="{ showConfirmAnnuler: false }" class="inline">
                                                  <button type="button"
                                                          @click="showConfirmAnnuler = true"
-                                                         class="inline-flex items-center justify-center px-4 py-2 border border-red-300 rounded-lg text-sm font-medium text-red-700 bg-white hover:bg-red-50 transition-colors duration-200">
+                                                         class="inline-flex items-center justify-center px-4 py-2 border border-red-400 rounded-lg text-sm font-semibold text-red-700 bg-white hover:bg-red-50 shadow transition-colors duration-200">
                                                      <svg class="w-4 h-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
                                                      </svg>
@@ -390,7 +390,7 @@
                                              <div x-data="{ showConfirmAnnulerAdherent: false }" class="inline">
                                                  <button type="button"
                                                          @click="showConfirmAnnulerAdherent = true"
-                                                         class="inline-flex items-center justify-center px-4 py-2 border border-orange-300 rounded-lg text-sm font-medium text-orange-700 bg-white hover:bg-orange-50 transition-colors duration-200">
+                                                         class="inline-flex items-center justify-center px-4 py-2 border border-lime-400 rounded-lg text-sm font-semibold text-lime-700 bg-white hover:bg-lime-50 shadow transition-colors duration-200">
                                                      <svg class="w-4 h-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
                                                      </svg>
@@ -537,14 +537,14 @@
         @else
             <!-- Empty State -->
             <div class="text-center py-12">
-                <div class="mx-auto w-24 h-24 bg-purple-100 rounded-full flex items-center justify-center mb-6">
-                    <svg class="w-12 h-12 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <div class="mx-auto w-24 h-24 bg-emerald-100 rounded-full flex items-center justify-center mb-6 shadow-lg">
+                    <svg class="w-12 h-12 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                     </svg>
                 </div>
-                <h3 class="text-xl font-semibold text-gray-900 mb-2">Aucune réservation</h3>
-                <p class="text-gray-600 mb-6">Vous n'avez pas encore de réservations. Parcourez notre catalogue pour réserver des livres !</p>
-                <a href="{{ route('livres.index') }}" class="inline-flex items-center px-6 py-3 bg-purple-600 hover:bg-purple-700 text-white rounded-lg transition-colors duration-200">
+                <h3 class="text-xl font-bold text-emerald-900 mb-2">Aucune réservation</h3>
+                <p class="text-green-700 mb-6">Vous n'avez pas encore de réservations. Parcourez notre catalogue pour réserver des livres !</p>
+                <a href="{{ route('livres.index') }}" class="inline-flex items-center px-6 py-3 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg shadow-md transition-colors duration-200">
                     <svg class="w-5 h-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
                     </svg>

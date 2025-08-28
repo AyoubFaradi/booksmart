@@ -3,7 +3,7 @@
 @section('title', 'Mes Emprunts - ' . config('app.name'))
 
 @section('content')
-<div class="min-h-screen bg-gray-50">
+<div class="min-h-screen bg-gradient-to-br from-green-100 via-emerald-100 to-lime-100">
 
     <!-- Flash Messages -->
     @if(session('success'))
@@ -61,17 +61,20 @@
     @endif
 
     <!-- Hero Section -->
-    <div class="bg-gradient-to-r from-blue-600 to-indigo-700 text-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <div class="bg-gradient-to-r from-green-700 via-emerald-600 to-lime-500 text-white py-16 shadow-2xl rounded-b-3xl">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center">
-                <h1 class="text-4xl font-extrabold sm:text-5xl md:text-6xl">
+                <h1 class="text-5xl font-extrabold tracking-tight drop-shadow-2xl flex items-center justify-center gap-3">
+                    <svg class="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                    </svg>
                     @if(Auth::user()->role === 'admin')
-                        📚 Gestion des Emprunts
+                        Gestion des Emprunts
                     @else
-                        📚 Mes Emprunts
+                        Mes Emprunts
                     @endif
                 </h1>
-                <p class="mt-6 max-w-2xl mx-auto text-xl text-blue-100">
+                <p class="mt-6 max-w-2xl mx-auto text-xl text-white/90 font-medium">
                     @if(Auth::user()->role === 'admin')
                         Gérez tous les emprunts de la bibliothèque et suivez les retours de livres.
                     @else
@@ -86,11 +89,11 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         @if(Auth::user()->role === 'admin')
         <!-- Header with Stats for Admins -->
-        <div class="bg-white rounded-xl shadow-lg p-6 mb-8">
+    <div class="bg-white/80 backdrop-blur-lg rounded-3xl shadow-2xl p-8 mb-10 border border-green-200">
             <div class="flex flex-col md:flex-row md:items-center md:justify-between">
                 <div>
                     <h2 class="text-2xl font-bold text-gray-900 flex items-center">
-                        <svg class="w-8 h-8 text-blue-600 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <svg class="w-8 h-8 text-emerald-600 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2H5a2 2 0 00-2-2z" />
                         </svg>
                         Vue d'ensemble des emprunts
@@ -100,8 +103,8 @@
                     </p>
                 </div>
                 <div class="mt-4 md:mt-0">
-                    <a href="{{ route('livres.index') }}" class="inline-flex items-center px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors duration-200">
-                        <svg class="w-4 h-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <a href="{{ route('livres.index') }}" class="inline-flex items-center px-4 py-2 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg transition-colors duration-200">
+                        <svg class="w-4 h-4 mr-2 text-emerald-100" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
                         </svg>
                         Voir le catalogue
@@ -112,9 +115,9 @@
         @endif
 
     @if($emprunts->isEmpty())
-            <div class="bg-white rounded-2xl shadow-lg p-12 text-center">
-                <div class="mx-auto w-24 h-24 bg-gray-100 rounded-full flex items-center justify-center mb-4">
-                    <svg class="w-12 h-12 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <div class="bg-white/80 backdrop-blur-lg rounded-3xl shadow-2xl p-12 text-center border border-green-200">
+                <div class="mx-auto w-24 h-24 bg-green-50 rounded-full flex items-center justify-center mb-4">
+                    <svg class="w-12 h-12 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
                     </svg>
                 </div>
@@ -133,8 +136,8 @@
                     @endif
                 </p>
                 <div class="mt-6">
-                    <a href="{{ route('livres.index') }}" class="inline-flex items-center px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-xl font-medium transition-all duration-200 shadow-md hover:shadow-lg transform hover:scale-105">
-                        <svg class="w-5 h-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <a href="{{ route('livres.index') }}" class="inline-flex items-center px-6 py-3 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl font-medium transition-all duration-200 shadow-md hover:shadow-lg transform hover:scale-105">
+                        <svg class="w-5 h-5 mr-2 text-emerald-100" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
                         </svg>
                         @if(Auth::user()->role === 'admin')
@@ -147,22 +150,22 @@
         </div>
     @else
             <!-- Table des emprunts -->
-            <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
+            <div class="bg-white/80 backdrop-blur-lg rounded-3xl shadow-2xl overflow-hidden border border-green-200">
         <div class="overflow-x-auto">
                     <table class="w-full">
-                        <thead class="bg-gradient-to-r from-blue-50 to-indigo-50">
+                        <thead class="bg-gradient-to-r from-green-100 via-emerald-100 to-lime-100">
                             <tr>
-                                <th class="px-6 py-4 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Livre</th>
-                                <th class="px-6 py-4 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Adhérent</th>
-                                <th class="px-6 py-4 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Date d'emprunt</th>
-                                <th class="px-6 py-4 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Date retour prévue</th>
-                                <th class="px-6 py-4 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Date retour effectif</th>
-                                <th class="px-6 py-4 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Statut</th>
-                    </tr>
-                </thead>
-                        <tbody class="bg-white divide-y divide-gray-100">
+                                <th class="px-6 py-4 text-left text-xs font-bold text-green-700 uppercase tracking-wider">Livre</th>
+                                <th class="px-6 py-4 text-left text-xs font-bold text-green-700 uppercase tracking-wider">Adhérent</th>
+                                <th class="px-6 py-4 text-left text-xs font-bold text-green-700 uppercase tracking-wider">Date d'emprunt</th>
+                                <th class="px-6 py-4 text-left text-xs font-bold text-green-700 uppercase tracking-wider">Date retour prévue</th>
+                                <th class="px-6 py-4 text-left text-xs font-bold text-green-700 uppercase tracking-wider">Date retour effectif</th>
+                                <th class="px-6 py-4 text-left text-xs font-bold text-green-700 uppercase tracking-wider">Statut</th>
+                            </tr>
+                        </thead>
+                        <tbody class="bg-white/70 divide-y divide-green-100">
                     @foreach($emprunts as $emprunt)
-                                <tr class="hover:bg-blue-50 transition-colors duration-200">
+                                <tr class="hover:bg-green-50 transition-colors duration-200">
                                     <td class="px-6 py-4 whitespace-nowrap">
                                         <div class="flex items-center">
                                             <div class="flex-shrink-0 h-12 w-12">
@@ -177,8 +180,8 @@
                                                              class="h-12 w-12 rounded-lg object-cover border-2 border-gray-200 shadow-sm">
                                                     @endif
                                                 @else
-                                                    <div class="h-12 w-12 bg-gray-100 rounded-lg flex items-center justify-center">
-                                                        <svg class="w-6 h-6 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                    <div class="h-12 w-12 bg-green-50 rounded-lg flex items-center justify-center">
+                                                        <svg class="w-6 h-6 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
                                                         </svg>
                                                     </div>
@@ -198,8 +201,8 @@
                                         <div class="text-sm text-gray-900">
                                             @if($emprunt->adherent)
                                                 <div class="flex items-center">
-                                                    <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center mr-3">
-                                                        <svg class="w-4 h-4 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                    <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center mr-3">
+                                                        <svg class="w-4 h-4 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                                                         </svg>
                                                     </div>
@@ -245,7 +248,7 @@
                                     <td class="px-6 py-4 whitespace-nowrap">
                                         <div class="flex items-center space-x-2">
                                 @if($emprunt->statut === 'en_cours')
-                                                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-yellow-100 text-yellow-800">
+                                                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-extrabold bg-yellow-200 text-yellow-900 border border-yellow-300 shadow">
                                                     <svg class="w-3 h-3 mr-1" fill="currentColor" viewBox="0 0 20 20">
                                                         <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
                                                     </svg>
@@ -254,9 +257,9 @@
 
                                                 <!-- Bouton pour marquer comme retourné -->
                                                 <div x-data="{ showConfirm: false }" class="inline">
-                                                    <button type="button"
-                                                            @click="showConfirm = true"
-                                                            class="inline-flex items-center px-2 py-1 text-xs font-medium text-green-700 bg-green-100 border border-green-300 rounded-full hover:bg-green-200 transition-colors duration-200">
+                            <button type="button"
+                                @click="showConfirm = true"
+                                class="inline-flex items-center px-2 py-1 text-xs font-bold text-green-700 bg-gradient-to-r from-lime-100 to-green-200 border border-green-300 rounded-full hover:bg-green-200 transition-colors duration-200">
                                                         <svg class="w-3 h-3 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
                                                         </svg>
@@ -302,14 +305,14 @@
                                                                         @csrf
                                                                         @method('PUT')
                                                                         <input type="hidden" name="status" value="retourne">
-                                                                        <button type="submit"
-                                                                                class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-green-600 text-base font-medium text-white hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 sm:ml-3 sm:w-auto sm:text-sm">
+                                    <button type="submit"
+                                        class="w-full inline-flex justify-center rounded-full border-2 border-fuchsia-400 shadow-xl px-4 py-2 bg-gradient-to-r from-fuchsia-500 to-pink-500 text-base font-extrabold text-white hover:from-fuchsia-600 hover:to-pink-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-fuchsia-400 sm:ml-3 sm:w-auto sm:text-sm uppercase tracking-wider">
                                                                             Confirmer
                                                                         </button>
                                                                     </form>
-                                                                    <button type="button"
-                                                                            @click="showConfirm = false"
-                                                                            class="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm">
+                                    <button type="button"
+                                        @click="showConfirm = false"
+                                        class="mt-3 w-full inline-flex justify-center rounded-full border-2 border-gray-300 shadow px-4 py-2 bg-white text-base font-extrabold text-gray-700 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-fuchsia-400 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm uppercase tracking-wider">
                                                                         Annuler
                                                                     </button>
                                                                 </div>
@@ -318,7 +321,7 @@
                                                     </div>
                                                 </div>
                                 @else
-                                                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-green-100 text-green-800">
+                                                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-extrabold bg-emerald-200 text-emerald-900 border border-emerald-300 shadow">
                                                     <svg class="w-3 h-3 mr-1" fill="currentColor" viewBox="0 0 20 20">
                                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
                                                     </svg>
@@ -337,16 +340,16 @@
             <!-- Actions -->
             <div class="mt-8 flex justify-center">
                 <a href="{{ route('livres.index') }}"
-                   class="inline-flex items-center px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-xl font-medium transition-all duration-200 shadow-md hover:shadow-lg transform hover:scale-105">
+                   class="inline-flex items-center px-6 py-3 bg-gradient-to-r from-fuchsia-500 to-pink-500 hover:from-fuchsia-600 hover:to-pink-600 text-white rounded-full font-extrabold uppercase tracking-wider shadow-xl transition-all duration-200 transform hover:scale-105 border-2 border-white/60">
                     <svg class="w-5 h-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
                     </svg>
                     @if(Auth::user()->role === 'admin')
                         Voir le catalogue
                     @else
-            Retour au catalogue
+                        Retour au catalogue
                     @endif
-        </a>
+                </a>
             </div>
         @endif
     </div>

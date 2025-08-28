@@ -60,97 +60,101 @@
         </div>
     @endif
 
-    <!-- Hero Section -->
-    <div class="bg-gradient-to-r from-blue-600 to-indigo-700 text-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-            <div class="text-center">
-                <h1 class="text-4xl font-extrabold sm:text-5xl md:text-6xl">
-                    Catalogue complet
+    <!-- Hero Section - Glassmorphism, floating, unique style -->
+    <div class="relative py-20 bg-gradient-to-br from-emerald-100 via-cyan-100 to-white overflow-hidden">
+        <div class="absolute inset-0 pointer-events-none">
+            <svg width="100%" height="100%" class="absolute inset-0 opacity-30" style="z-index:0;" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <radialGradient id="bgPattern" cx="50%" cy="50%" r="80%">
+                        <stop offset="0%" stop-color="#6ee7b7"/>
+                        <stop offset="100%" stop-color="#a7f3d0" stop-opacity="0.2"/>
+                    </radialGradient>
+                </defs>
+                <rect width="100%" height="100%" fill="url(#bgPattern)"/>
+            </svg>
+        </div>
+        <div class="relative z-10 max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="mx-auto bg-white/60 backdrop-blur-2xl rounded-3xl shadow-2xl border border-emerald-200 px-10 py-14 flex flex-col items-center gap-6" style="box-shadow: 0 8px 32px 0 rgba(16, 185, 129, 0.18);">
+                <div class="flex items-center justify-center mb-4">
+                    <span class="inline-flex items-center justify-center w-20 h-20 rounded-full bg-gradient-to-br from-emerald-400 via-cyan-400 to-emerald-200 shadow-lg">
+                        <svg class="w-12 h-12 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                        </svg>
+                    </span>
+                </div>
+                <h1 class="text-5xl sm:text-6xl font-black tracking-tight text-emerald-900 drop-shadow-xl text-center mb-2" style="letter-spacing: -0.03em;">
+                    <span class="bg-gradient-to-r from-emerald-500 via-cyan-400 to-emerald-400 bg-clip-text text-transparent">Catalogue Premium</span>
                 </h1>
-                <p class="mt-6 max-w-2xl mx-auto text-xl text-blue-100">
-                    Découvrez notre collection complète de livres. Recherchez, explorez et trouvez votre prochaine lecture.
+                <p class="mt-2 max-w-xl mx-auto text-emerald-800 text-xl font-semibold text-center">
+                    Plongez dans une expérience de lecture inédite. Découvrez, explorez et trouvez votre prochaine lecture dans un univers visuel unique.
                 </p>
+                <div class="mt-6 flex flex-wrap gap-3 justify-center">
+                    <span class="px-4 py-1 rounded-full bg-gradient-to-r from-emerald-200 to-cyan-100 text-emerald-900 text-xs font-bold shadow">Nouveautés</span>
+                    <span class="px-4 py-1 rounded-full bg-gradient-to-r from-fuchsia-200 to-pink-100 text-fuchsia-900 text-xs font-bold shadow">Tendances</span>
+                    <span class="px-4 py-1 rounded-full bg-gradient-to-r from-yellow-200 to-amber-100 text-yellow-900 text-xs font-bold shadow">Recommandés IA</span>
+                </div>
             </div>
         </div>
     </div>
 
     <!-- Section Recommandations IA Personnalisées -->
-    <div class="bg-gradient-to-br from-indigo-50 to-blue-100 py-12">
+    <div class="bg-gradient-to-br from-emerald-50 via-cyan-50 to-white py-16">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <!-- Header -->
-            <div class="text-center mb-8">
-                <h2 class="text-2xl font-bold text-gray-900 mb-3">
-                    🤖 Besoin d'aide pour choisir votre prochain livre ?
-                </h2>
-                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
-                    Dites-nous quels livres vous avez aimés et notre IA vous proposera des recommandations personnalisées.
-                </p>
+            <div class="text-center mb-10">
+                <div class="flex justify-center mb-4">
+                    <span class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-emerald-400 via-cyan-400 to-emerald-200 shadow-lg">
+                        <svg class="w-8 h-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                        </svg>
+                    </span>
+                </div>
+                <h2 class="text-3xl sm:text-4xl font-black text-emerald-900 mb-2 drop-shadow-xl">Besoin d'aide pour choisir ?</h2>
+                <p class="text-lg text-emerald-800 max-w-2xl mx-auto font-semibold">Indiquez-nous vos lectures favorites et laissez notre IA vous surprendre avec des recommandations personnalisées et inédites.</p>
             </div>
-
             <!-- Formulaire de recommandations -->
-            <div class="max-w-4xl mx-auto">
-                <div class="bg-white rounded-2xl shadow-xl p-6">
-                    <form id="personalRecommendationForm" class="space-y-4">
-                        @csrf
-
-                        <!-- Container des livres -->
-                        <div id="booksContainer" class="space-y-4">
-                            <!-- Premier livre (toujours présent) -->
-                            <div class="book-entry bg-gray-50 rounded-xl p-4 border-2 border-dashed border-gray-200">
-                                <div class="flex items-center justify-between mb-3">
-                                    <h3 class="text-lg font-semibold text-gray-900">Livre #1</h3>
-                                    <button type="button" class="text-red-500 hover:text-red-700" onclick="removeBook(this)" style="display: none;">
-                                        <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
-                                        </svg>
-                                    </button>
+            <div class="max-w-3xl mx-auto">
+                <form id="personalRecommendationForm" class="bg-white/70 backdrop-blur-2xl rounded-3xl shadow-2xl border border-emerald-200 px-8 py-10 flex flex-col gap-8" style="box-shadow: 0 8px 32px 0 rgba(16, 185, 129, 0.18);">
+                    @csrf
+                    <div id="booksContainer" class="flex flex-col gap-6">
+                        <!-- Premier livre (toujours présent) -->
+                        <div class="book-entry relative bg-gradient-to-br from-emerald-50 via-cyan-50 to-white rounded-2xl border-2 border-dashed border-emerald-200 p-6 shadow group">
+                            <div class="flex items-center gap-3 mb-4">
+                                <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-gradient-to-br from-emerald-400 to-cyan-400 text-white font-bold shadow">1</span>
+                                <span class="text-lg font-extrabold text-emerald-900">Livre</span>
+                                <button type="button" class="ml-auto text-red-400 hover:text-red-600 transition hidden group-hover:block" onclick="removeBook(this)" style="display: none;">
+                                    <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div>
+                                    <label for="book-title-0" class="block mb-2 text-emerald-700 text-sm font-bold">Titre du livre *</label>
+                                    <input type="text" name="books[0][title]" required id="book-title-0" class="w-full px-4 py-3 border-2 border-emerald-200 rounded-xl bg-white/80 focus:ring-2 focus:ring-emerald-400 focus:border-emerald-400 font-semibold transition" placeholder="Ex: Le Petit Prince" />
                                 </div>
-
-                                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                    <div>
-                                        <label class="block text-sm font-medium text-gray-700 mb-2">
-                                            Titre du livre *
-                                        </label>
-                                        <input type="text" name="books[0][title]" required
-                                               class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors"
-                                               placeholder="Ex: Le Petit Prince">
-                                    </div>
-
-                                    <div>
-                                        <label class="block text-sm font-medium text-gray-700 mb-2">
-                                            Description ou résumé *
-                                        </label>
-                                        <textarea name="books[0][description]" required rows="2"
-                                                  class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors resize-none"
-                                                  placeholder="Décrivez brièvement l'histoire, le genre, les thèmes..."></textarea>
-                                    </div>
+                                <div>
+                                    <label for="book-desc-0" class="block mb-2 text-emerald-700 text-sm font-bold">Description ou résumé *</label>
+                                    <textarea name="books[0][description]" required id="book-desc-0" rows="2" class="w-full px-4 py-3 border-2 border-emerald-200 rounded-xl bg-white/80 focus:ring-2 focus:ring-emerald-400 focus:border-emerald-400 font-semibold transition resize-none" placeholder="Décrivez brièvement l'histoire, le genre, les thèmes..."></textarea>
                                 </div>
                             </div>
                         </div>
-
-                        <!-- Bouton Ajouter un livre -->
-                        <div class="text-center">
-                            <button type="button" onclick="addBook()"
-                                    class="inline-flex items-center px-4 py-2 bg-indigo-100 text-indigo-700 rounded-lg hover:bg-indigo-200 transition-colors">
-                                <svg class="w-4 h-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
-                                </svg>
-                                Ajouter un autre livre
-                            </button>
-                        </div>
-
-                        <!-- Bouton Soumettre -->
-                        <div class="text-center pt-4">
-                            <button type="submit" id="submitBtn"
-                                    class="inline-flex items-center px-6 py-3 bg-indigo-600 text-white rounded-xl hover:bg-indigo-700 transition-colors font-semibold">
-                                <svg class="w-5 h-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-                                </svg>
-                                Obtenir mes recommandations
-                            </button>
-                        </div>
-                    </form>
-                </div>
+                    </div>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-between items-center mt-2">
+                        <button type="button" onclick="addBook()" class="inline-flex items-center gap-2 px-5 py-3 bg-gradient-to-r from-cyan-100 to-emerald-100 text-emerald-700 rounded-xl font-bold shadow hover:bg-emerald-200 transition-all">
+                            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                            </svg>
+                            Ajouter un autre livre
+                        </button>
+                        <button type="submit" id="submitBtn" class="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-emerald-500 to-cyan-500 hover:from-emerald-600 hover:to-cyan-600 text-white rounded-2xl font-extrabold text-lg shadow-xl uppercase tracking-wider transition-all border-2 border-white/60">
+                            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                            </svg>
+                            Trouver mes recommandations
+                        </button>
+                    </div>
+                </form>
 
                 <!-- Section de chargement -->
                 <div id="loadingSection" class="hidden bg-white rounded-2xl shadow-xl p-6 text-center mt-6">
@@ -216,69 +220,58 @@
             <div class="bg-white rounded-lg shadow p-6 text-center text-gray-600">Aucun livre trouvé.</div>
         @else
             <!-- Grid -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
                 @foreach($livres as $livre)
-                    <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
-                        <div class="relative">
-                            @if($livre->image_url)
-                                @if(filter_var($livre->image_url, FILTER_VALIDATE_URL))
-                                    <!-- Image externe (URL) -->
-                                    <img src="{{ $livre->image_url }}"
-                                         alt="{{ $livre->titre }}"
-                                         class="w-full h-56 object-cover">
+                    <div class="relative group bg-white/70 backdrop-blur-2xl border-l-8 border-emerald-400 rounded-3xl shadow-2xl overflow-visible transition-transform duration-300 hover:scale-105 hover:shadow-emerald-400/40 hover:bg-white/90" style="box-shadow: 0 8px 32px 0 rgba(16, 185, 129, 0.18);">
+                        <div class="flex flex-col items-center pt-8 pb-4 px-4 relative">
+                            <div class="absolute -left-8 top-8 h-20 w-2 rounded-full bg-gradient-to-b from-emerald-400 to-lime-300 shadow-lg"></div>
+                            <div class="-mt-12 mb-2 z-10">
+                                @if($livre->image_url)
+                                    @if(filter_var($livre->image_url, FILTER_VALIDATE_URL))
+                                        <img src="{{ $livre->image_url }}" alt="{{ $livre->titre }}" class="w-24 h-24 object-cover rounded-full border-4 border-white shadow-lg bg-emerald-50">
+                                    @else
+                                        <img src="{{ asset('storage/'.$livre->image_url) }}" alt="{{ $livre->titre }}" class="w-24 h-24 object-cover rounded-full border-4 border-white shadow-lg bg-emerald-50">
+                                    @endif
                                 @else
-                                    <!-- Image uploadée localement -->
-                                    <img src="{{ asset('storage/'.$livre->image_url) }}"
-                                         alt="{{ $livre->titre }}"
-                                         class="w-full h-56 object-cover">
+                                    <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=698&q=80" alt="Image par défaut" class="w-24 h-24 object-cover rounded-full border-4 border-white shadow-lg bg-emerald-50">
                                 @endif
-                            @else
-                                <!-- Image par défaut -->
-                                <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=698&q=80"
-                                     alt="Image par défaut"
-                                     class="w-full h-56 object-cover">
-                            @endif
-
-                            <!-- Rating (en haut à droite) -->
+                            </div>
                             @if(!is_null($livre->rating))
-                                <div class="absolute top-2 right-2 bg-yellow-400 text-yellow-900 px-2 py-1 rounded-full text-xs font-semibold">
-                                    ⭐ {{ number_format((float)$livre->rating, 1) }}
+                                <div class="absolute top-4 right-4 bg-yellow-400/90 text-yellow-900 px-3 py-1 rounded-2xl text-xs font-extrabold shadow-lg border-2 border-yellow-200 flex items-center gap-1">
+                                    <svg class="w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.967a1 1 0 00.95.69h4.175c.969 0 1.371 1.24.588 1.81l-3.38 2.455a1 1 0 00-.364 1.118l1.287 3.966c.3.922-.755 1.688-1.54 1.118l-3.38-2.454a1 1 0 00-1.175 0l-3.38 2.454c-.784.57-1.838-.196-1.54-1.118l1.287-3.966a1 1 0 00-.364-1.118L2.05 9.394c-.783-.57-.38-1.81.588-1.81h4.175a1 1 0 00.95-.69l1.286-3.967z"/></svg>
+                                    {{ number_format((float)$livre->rating, 1) }}
                                 </div>
                             @endif
-
-                            <!-- Prix (en bas à gauche) -->
                             @if(!is_null($livre->price) && $livre->price > 0)
-                                <div class="absolute bottom-2 left-2 bg-green-500 text-white px-2 py-1 rounded-lg text-xs font-semibold shadow-lg">
-                                    💰 {{ number_format((float)$livre->price, 2) }} (MAD)
+                                <div class="absolute top-4 left-4 bg-gradient-to-r from-emerald-400 to-lime-400 text-white px-3 py-1 rounded-2xl text-xs font-extrabold shadow-lg border-2 border-emerald-200 flex items-center gap-1">
+                                    <svg class="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 1.343-3 3s1.343 3 3 3 3-1.343 3-3-1.343-3-3-3zm0 9c-3.866 0-7-3.134-7-7s3.134-7 7-7 7 3.134 7 7-3.134 7-7 7z"/></svg>
+                                    {{ number_format((float)$livre->price, 2) }} MAD
                                 </div>
                             @elseif(!is_null($livre->price) && $livre->price == 0)
-                                <div class="absolute bottom-2 left-2 bg-blue-500 text-white px-2 py-1 rounded-lg text-xs font-semibold shadow-lg">
-                                    🆓 Gratuit
+                                <div class="absolute top-4 left-4 bg-gradient-to-r from-fuchsia-500 to-pink-400 text-white px-3 py-1 rounded-2xl text-xs font-extrabold shadow-lg border-2 border-fuchsia-200 flex items-center gap-1">
+                                    <svg class="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 1.343-3 3s1.343 3 3 3 3-1.343 3-3-1.343-3-3-3zm0 9c-3.866 0-7-3.134-7-7s3.134-7 7-7 7 3.134 7 7-3.134 7-7 7z"/></svg>
+                                    Gratuit
                                 </div>
                             @endif
+                            <h3 class="text-lg font-extrabold text-emerald-900 mt-2 mb-1 line-clamp-1 drop-shadow-lg text-center">{{ $livre->titre }}</h3>
+                            <p class="text-sm text-gray-700 mb-2 line-clamp-2 font-medium text-center">{{ $livre->description }}</p>
                         </div>
-                        <div class="p-4">
-                            <h3 class="text-lg font-semibold text-gray-900 mb-1 line-clamp-1">{{ $livre->titre }}</h3>
-                            <p class="text-sm text-gray-500 mb-3 line-clamp-2">{{ $livre->description }}</p>
-                            <div class="flex justify-between items-center">
-                                @php $disponible = (int)($livre->stock ?? 0) > 0; @endphp
-                                <span class="{{ $disponible ? 'text-green-600' : 'text-orange-600' }} text-sm font-medium">
-                                    {{ $disponible ? 'Disponible' : 'Stock épuisé' }}
-                                </span>
-                                <div class="flex space-x-2">
-                                    <a href="{{ route('livres.show',$livre->id_livre) }}" class="bg-blue-600 hover:bg-blue-700 text-white px-3 py-1 rounded text-sm transition-colors duration-200">Détails</a>
-                                    @if($disponible)
-                                            <a href="{{ route('emprunts.create', $livre->id_livre) }}"
-                                            class="bg-green-600 hover:bg-green-700 text-white px-3 py-1 rounded text-sm transition-colors duration-200">
-                                            Emprunter
-                                        </a>
-                                    @else
-                                        <a href="{{ route('reservation.create', $livre->id_livre) }}" class="bg-orange-500 hover:bg-orange-600 text-white px-3 py-1 rounded text-sm transition-colors duration-200">
-                                            Réserver
-                                        </a>
-                                    @endif
-                                </div>
-                            </div>
+                        <div class="flex flex-col gap-2 px-4 pb-4">
+                            @php $disponible = (int)($livre->stock ?? 0) > 0; @endphp
+                            <span class="mx-auto {{ $disponible ? 'bg-gradient-to-r from-emerald-200 to-lime-200 text-emerald-900' : 'bg-gradient-to-r from-orange-200 to-yellow-200 text-orange-900' }} px-4 py-1 rounded-2xl text-xs font-extrabold shadow border border-emerald-100 mb-2">{{ $disponible ? 'Disponible' : 'Stock épuisé' }}</span>
+                        </div>
+                        <div class="sticky bottom-0 left-0 w-full bg-white/80 backdrop-blur-lg rounded-b-3xl px-4 py-3 flex justify-center gap-3 border-t border-emerald-100 z-20">
+                            <a href="{{ route('livres.show',$livre->id_livre) }}" class="bg-gradient-to-r from-fuchsia-500 to-pink-500 hover:from-fuchsia-600 hover:to-pink-600 text-white px-4 py-2 rounded-full text-sm font-bold uppercase shadow-md transition-all duration-200 border-2 border-white/60">Détails</a>
+                            @if($disponible)
+                                <a href="{{ route('emprunts.create', $livre->id_livre) }}"
+                                    class="bg-gradient-to-r from-emerald-500 to-lime-500 hover:from-emerald-600 hover:to-lime-600 text-white px-4 py-2 rounded-full text-sm font-bold uppercase shadow-md transition-all duration-200 border-2 border-white/60">
+                                    Emprunter
+                                </a>
+                            @else
+                                <a href="{{ route('reservation.create', $livre->id_livre) }}" class="bg-gradient-to-r from-orange-500 to-yellow-400 hover:from-orange-600 hover:to-yellow-500 text-white px-4 py-2 rounded-full text-sm font-bold uppercase shadow-md transition-all duration-200 border-2 border-white/60">
+                                    Réserver
+                                </a>
+                            @endif
                         </div>
                     </div>
                 @endforeach
@@ -525,81 +518,71 @@
  });
 
  function displayRecommendations(recommendations) {
-     const grid = document.getElementById('recommendationsGrid');
-     grid.innerHTML = '';
+    const grid = document.getElementById('recommendationsGrid');
+    grid.innerHTML = '';
 
-     if (recommendations.length === 0) {
-         grid.innerHTML = `
-             <div class="col-span-full text-center py-8">
-                 <div class="text-gray-500 mb-4">
-                     <svg class="w-16 h-16 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.172 16.172a4 4 0 015.656 0M9 12h6m-6-4h6m2 5.291A7.962 7.962 0 0112 15c-2.34 0-4.47-.881-6.08-2.33" />
-                     </svg>
-                 </div>
-                 <h3 class="text-lg font-semibold text-gray-900 mb-2">Aucune recommandation trouvée</h3>
-                 <p class="text-gray-600">Essayez avec d'autres livres ou descriptions plus détaillées.</p>
-             </div>
-         `;
-     } else {
-         recommendations.forEach(book => {
-             const similarityPercent = Math.round(book.similarity_score * 100);
-             const card = document.createElement('div');
-             card.className = 'bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300';
-             card.innerHTML = `
-                 <div class="relative">
-                     <img src="${book.image_url || '/images/default-book.jpg'}"
-                          alt="${book.titre}"
-                          class="w-full h-48 object-cover"
-                          onerror="this.src='/images/default-book.jpg'">
+    if (recommendations.length === 0) {
+        grid.innerHTML = `
+            <div class="col-span-full text-center py-8">
+                <div class="text-gray-500 mb-4">
+                    <svg class="w-16 h-16 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.172 16.172a4 4 0 015.656 0M9 12h6m-6-4h6m2 5.291A7.962 7.962 0 0112 15c-2.34 0-4.47-.881-6.08-2.33" />
+                    </svg>
+                </div>
+                <h3 class="text-lg font-semibold text-gray-900 mb-2">Aucune recommandation trouvée</h3>
+                <p class="text-gray-600">Essayez avec d'autres livres ou descriptions plus détaillées.</p>
+            </div>
+        `;
+    } else {
+        recommendations.forEach(book => {
+            const similarityPercent = Math.round(book.similarity_score * 100);
+            const card = document.createElement('div');
+            card.className = 'relative group bg-white/70 backdrop-blur-2xl border-l-8 border-emerald-400 rounded-3xl shadow-2xl overflow-visible transition-transform duration-300 hover:scale-105 hover:shadow-emerald-400/40 hover:bg-white/90';
+            card.style.boxShadow = '0 8px 32px 0 rgba(16, 185, 129, 0.18)';
+            card.innerHTML = `
+                <div class="flex flex-col items-center pt-8 pb-4 px-4 relative">
+                    <div class="absolute -left-8 top-8 h-20 w-2 rounded-full bg-gradient-to-b from-emerald-400 to-lime-300 shadow-lg"></div>
+                    <div class="-mt-12 mb-2 z-10">
+                        <img src="${book.image_url || 'https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=698&q=80'}"
+                             alt="${book.titre}"
+                             class="w-24 h-24 object-cover rounded-full border-4 border-white shadow-lg bg-emerald-50"
+                             onerror="this.src='https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=698&q=80'">
+                    </div>
+                    <div class="absolute top-4 right-4 bg-yellow-400/90 text-yellow-900 px-3 py-1 rounded-2xl text-xs font-extrabold shadow-lg border-2 border-yellow-200 flex items-center gap-1">
+                        <svg class="w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.967a1 1 0 00.95.69h4.175c.969 0 1.371 1.24.588 1.81l-3.38 2.455a1 1 0 00-.364 1.118l1.287 3.966c.3.922-.755 1.688-1.54 1.118l-3.38-2.454a1 1 0 00-1.175 0l-3.38 2.454c-.784.57-1.838-.196-1.54-1.118l1.287-3.966a1 1 0 00-.364-1.118L2.05 9.394c-.783-.57-.38-1.81.588-1.81h4.175a1 1 0 00.95-.69l1.286-3.967z"/></svg>
+                        ${book.rating ? Number(book.rating).toFixed(1) : 'N/A'}
+                    </div>
+                    <div class="absolute top-4 left-4 ${book.price > 0 ? 'bg-gradient-to-r from-emerald-400 to-lime-400 text-white border-emerald-200' : 'bg-gradient-to-r from-fuchsia-500 to-pink-400 text-white border-fuchsia-200'} px-3 py-1 rounded-2xl text-xs font-extrabold shadow-lg border-2 flex items-center gap-1">
+                        <svg class="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 1.343-3 3s1.343 3 3 3 3-1.343 3-3-1.343-3-3-3zm0 9c-3.866 0-7-3.134-7-7s3.134-7 7-7 7 3.134 7 7-3.134 7-7 7z"/></svg>
+                        ${book.price > 0 ? `${Number(book.price).toFixed(2)} MAD` : 'Gratuit'}
+                    </div>
+                    <h3 class="text-lg font-extrabold text-emerald-900 mt-2 mb-1 line-clamp-1 drop-shadow-lg text-center">${book.titre}</h3>
+                    <p class="text-sm text-gray-700 mb-2 line-clamp-2 font-medium text-center">${book.description}</p>
+                </div>
+                <div class="flex flex-col gap-2 px-4 pb-4">
+                    <span class="mx-auto ${book.stock > 0 ? 'bg-gradient-to-r from-emerald-200 to-lime-200 text-emerald-900' : 'bg-gradient-to-r from-orange-200 to-yellow-200 text-orange-900'} px-4 py-1 rounded-2xl text-xs font-extrabold shadow border border-emerald-100 mb-2">${book.stock > 0 ? 'Disponible' : 'Stock épuisé'}</span>
+                </div>
+                <div class="sticky bottom-0 left-0 w-full bg-white/80 backdrop-blur-lg rounded-b-3xl px-4 py-3 flex justify-center gap-3 border-t border-emerald-100 z-20">
+                    <a href="/livres/${book.id_livre}" class="bg-gradient-to-r from-fuchsia-500 to-pink-500 hover:from-fuchsia-600 hover:to-pink-600 text-white px-4 py-2 rounded-full text-sm font-bold uppercase shadow-md transition-all duration-200 border-2 border-white/60">Détails</a>
+                    ${book.stock > 0 ?
+                        `<a href="/emprunts/create/${book.id_livre}"
+                            class="bg-gradient-to-r from-emerald-500 to-lime-500 hover:from-emerald-600 hover:to-lime-600 text-white px-4 py-2 rounded-full text-sm font-bold uppercase shadow-md transition-all duration-200 border-2 border-white/60">
+                            Emprunter
+                        </a>` :
+                        `<a href="/reservation/create/${book.id_livre}"
+                            class="bg-gradient-to-r from-orange-500 to-yellow-400 hover:from-orange-600 hover:to-yellow-500 text-white px-4 py-2 rounded-full text-sm font-bold uppercase shadow-md transition-all duration-200 border-2 border-white/60">
+                            Réserver
+                        </a>`
+                    }
+                </div>
+            `;
+            grid.appendChild(card);
+        });
+    }
 
-                     <!-- Badge de similarité -->
-                     <div class="absolute top-2 right-2 bg-indigo-600 text-white px-2 py-1 rounded-lg text-xs font-semibold">
-                         ${similarityPercent}% similaire
-                     </div>
-
-                     <!-- Badge de disponibilité -->
-                     <div class="absolute bottom-2 left-2 ${book.stock > 0 ? 'bg-green-500' : 'bg-orange-500'} text-white px-2 py-1 rounded-lg text-xs font-semibold">
-                         ${book.stock > 0 ? 'Disponible' : 'Stock épuisé'}
-                     </div>
-                 </div>
-
-                 <div class="p-4">
-                     <h3 class="text-lg font-semibold text-gray-900 mb-2 line-clamp-2">${book.titre}</h3>
-                     <p class="text-sm text-gray-600 mb-3 line-clamp-3">${book.description}</p>
-
-                     <div class="flex justify-between items-center mb-3">
-                         <div class="flex items-center">
-                             <span class="text-yellow-500">★</span>
-                             <span class="text-sm text-gray-600 ml-1">${book.rating}/5</span>
-                         </div>
-                         ${book.price > 0 ? `<span class="text-green-600 font-semibold">${book.price} MAD</span>` : '<span class="text-blue-600 font-semibold">Gratuit</span>'}
-                     </div>
-
-                     <div class="flex space-x-2">
-                         <a href="/livres/${book.id_livre}"
-                            class="flex-1 bg-blue-600 hover:bg-blue-700 text-white text-center py-2 px-3 rounded-lg text-sm transition-colors">
-                             Détails
-                         </a>
-                         ${book.stock > 0 ?
-                             `<a href="/emprunts/create/${book.id_livre}"
-                                 class="flex-1 bg-green-600 hover:bg-green-700 text-white text-center py-2 px-3 rounded-lg text-sm transition-colors">
-                                 Emprunter
-                             </a>` :
-                             `<a href="/reservation/create/${book.id_livre}"
-                                 class="flex-1 bg-orange-500 hover:bg-orange-600 text-white text-center py-2 px-3 rounded-lg text-sm transition-colors">
-                                 Réserver
-                             </a>`
-                         }
-                     </div>
-                 </div>
-             `;
-             grid.appendChild(card);
-         });
-     }
-
-     // Afficher la section des résultats
-     document.getElementById('resultsSection').classList.remove('hidden');
- }
+    // Afficher la section des résultats
+    document.getElementById('resultsSection').classList.remove('hidden');
+}
 
  function showError(message) {
      document.getElementById('errorMessage').textContent = message;

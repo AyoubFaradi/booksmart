@@ -22,6 +22,7 @@ class LivreFactory extends Factory
             'image_url' => $this->faker->imageUrl,
             'stock' => $this->faker->numberBetween(1, 100),
             'rating' => $this->faker->numberBetween(1, 5),
+            'price' => $this->faker->randomFloat(2, 5, 100),
         ];
     }
 }

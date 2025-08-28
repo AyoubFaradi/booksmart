@@ -3,95 +3,34 @@
 @section('title', 'Modifier un Livre - ' . config('app.name'))
 
 @section('content')
-<div class="min-h-screen bg-gray-50">
-
-    <!-- Flash Messages -->
-    @if(session('success'))
-        <div class="fixed top-20 left-1/2 transform -translate-x-1/2 z-50 w-full max-w-md" x-data="{ show: true }" x-show="show" x-init="setTimeout(() => show = false, 5000)">
-            <div class="bg-green-50 border border-green-200 text-green-800 px-4 py-3 rounded-lg shadow-lg">
-                <div class="flex items-center">
-                    <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-                    </svg>
-                    <span class="font-medium">{{ session('success') }}</span>
-                    <button @click="show = false" class="ml-auto text-green-600 hover:text-green-800">
-                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
-                        </svg>
-                    </button>
-                </div>
-            </div>
-        </div>
-    @endif
-
-    @if(session('error'))
-        <div class="fixed top-20 left-1/2 transform -translate-x-1/2 z-50 w-full max-w-md" x-data="{ show: true }" x-show="show" x-init="setTimeout(() => show = false, 5000)">
-            <div class="bg-red-50 border border-red-200 text-red-800 px-4 py-3 rounded-lg shadow-lg">
-                <div class="flex items-center">
-                    <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                        <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd"></path>
-                    </svg>
-                    <span class="font-medium">{{ session('error') }}</span>
-                    <button @click="show = false" class="ml-auto text-red-600 hover:text-red-800">
-                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
-                        </svg>
-                    </button>
-                </div>
-            </div>
-        </div>
-    @endif
-
-    @if(session('info'))
-        <div class="fixed top-20 left-1/2 transform -translate-x-1/2 z-50 w-full max-w-md" x-data="{ show: true }" x-show="show" x-init="setTimeout(() => show = false, 5000)">
-            <div class="bg-blue-50 border border-blue-200 text-blue-800 px-4 py-3 rounded-lg shadow-lg">
-                <div class="flex items-center">
-                    <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                        <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path>
-                    </svg>
-                    <span class="font-medium">{{ session('info') }}</span>
-                    <button @click="show = false" class="ml-auto text-blue-600 hover:text-blue-800">
-                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
-                        </svg>
-                    </button>
-                </div>
-            </div>
-        </div>
-    @endif
+<div class="min-h-screen bg-gradient-to-br from-green-100 via-emerald-100 to-lime-100 flex flex-col py-8">
 
     <!-- Hero Section -->
-    <div class="bg-gradient-to-r from-yellow-500 to-orange-600 text-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-            <div class="text-center">
-                <h1 class="text-4xl font-extrabold sm:text-5xl md:text-6xl">✏️ Modifier le Livre</h1>
-                <p class="mt-6 max-w-2xl mx-auto text-xl text-yellow-100">
-                    Modifiez les informations de votre livre. Mettez à jour les détails, l'image et les paramètres.
-                </p>
-            </div>
+    <div class="bg-gradient-to-r from-green-600 via-emerald-500 to-lime-500 text-white py-16 shadow-lg rounded-b-3xl">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <h1 class="text-5xl font-extrabold tracking-tight drop-shadow-lg">✏️ Modifier le Livre</h1>
+            <p class="mt-4 text-xl text-white/90 font-medium">Modifiez les informations de votre livre. Mettez à jour les détails, l'image et les paramètres.</p>
         </div>
     </div>
 
     <!-- Formulaire Section -->
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div class="bg-white shadow-xl rounded-2xl overflow-hidden">
+    <div class="max-w-4xl mx-auto p-6 -mt-16">
+        <div class="bg-white/80 backdrop-blur-lg rounded-3xl shadow-2xl overflow-hidden border border-green-200">
             <!-- Header du formulaire -->
-            <div class="bg-gradient-to-r from-yellow-500 to-orange-600 px-8 py-6">
-                <div class="flex items-center">
-                    <div class="bg-white bg-opacity-20 rounded-full p-3 mr-4">
-                        <svg class="w-8 h-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
-                        </svg>
-                    </div>
-                    <div>
-                        <h2 class="text-2xl font-bold text-white">Modification du Livre</h2>
-                        <p class="text-yellow-100 mt-1">Mettez à jour les informations de votre livre</p>
-                    </div>
+            <div class="bg-gradient-to-r from-green-500 via-emerald-400 to-lime-400 p-6 flex items-center gap-4">
+                <div class="bg-white/40 rounded-full p-3 shadow mr-4">
+                    <svg class="w-8 h-8 text-green-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+                    </svg>
+                </div>
+                <div>
+                    <h2 class="text-2xl font-bold text-white drop-shadow">Modification du Livre</h2>
+                    <p class="text-white/90 text-sm">Mettez à jour les informations de votre livre</p>
                 </div>
             </div>
 
             <!-- Contenu du formulaire -->
-            <div class="p-8">
+            <div class="p-10">
                 <form method="POST" action="{{ route('livres.update', $livre->id_livre) }}" enctype="multipart/form-data" class="space-y-8">
             @csrf
             @method('PUT')
