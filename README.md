@@ -1,43 +1,72 @@
-# 📚 ApplicationGestionAi - Système de Gestion de Bibliothèque avec IA
+# BookSmart - Système de Gestion de Bibliothèque
 
-[![Laravel](https://img.shields.io/badge/Laravel-10.x-red.svg)](https://laravel.com)
-[![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)](https://python.org)
-[![FastAPI](https://img.shields.io/badge/FastAPI-0.104+-green.svg)](https://fastapi.tiangolo.com)
-[![MySQL](https://img.shields.io/badge/MySQL-8.0+-orange.svg)](https://mysql.com)
-[![Tailwind CSS](https://img.shields.io/badge/Tailwind-3.x-38B2AC.svg)](https://tailwindcss.com)
+BookSmart est une application web moderne de gestion de bibliothèque développée avec Laravel et Tailwind CSS. Elle permet aux utilisateurs de parcourir un catalogue de livres, de faire des réservations, de recevoir des recommandations personnalisées, et aux administrateurs de gérer les adhérents, les emprunts, et les stocks.
 
-## 🎯 Vue d'ensemble
+## Fonctionnalités principales
 
-**ApplicationGestionAi** est une solution complète de gestion de bibliothèque moderne qui intègre l'intelligence artificielle pour offrir des recommandations personnalisées de livres. Cette application combine la robustesse de Laravel pour la gestion des données et la puissance de Python/FastAPI pour l'analyse prédictive.
+- **Catalogue de livres** : Parcourez, recherchez et consultez les détails des livres disponibles.
+- **Réservations** : Réservez des livres indisponibles, suivez le statut de vos réservations, annulez ou modifiez-les.
+- **Système de recommandations** : Recevez des suggestions de lecture personnalisées grâce à un modèle de recommandation intégré.
+- **Gestion des adhérents** : Les administrateurs peuvent gérer les utilisateurs, les réservations, les emprunts et les retours.
+- **Tableau de bord** : Visualisez les statistiques clés de la bibliothèque (nombre de livres, réservations, adhérents, etc.).
+- **Notifications** : Recevez des alertes lors de la disponibilité d'un livre réservé ou d'une action importante.
+- **Interface moderne** : UI/UX premium avec Tailwind CSS, design responsive, thèmes verts et effets visuels avancés.
 
-### 🌟 Fonctionnalités principales
+## Technologies utilisées
 
-- **Gestion complète de bibliothèque** : Adhérents, livres, emprunts, réservations
-- **Recommandations IA personnalisées** : Basées sur TF-IDF et similarité cosinus
-- **Interface moderne et responsive** : Design Tailwind CSS
-- **API REST performante** : FastAPI pour les recommandations
-- **Système d'authentification** : Rôles utilisateur et adhérent
-- **Dashboard administrateur** : Gestion complète de la bibliothèque
-- **Recherche avancée** : Filtrage et tri des livres
-- **Historique des emprunts** : Suivi complet des activités
+- **Backend** : Laravel (PHP)
+- **Frontend** : Blade, Tailwind CSS, Alpine.js
+- **Recommandation** : Python (modèle ML), API Flask
+- **Base de données** : MySQL
 
-## 🏗️ Architecture du système
+## Installation rapide
 
-### Composants principaux
+1. Clonez le dépôt :
+    ```bash
+    git clone https://github.com/AyoubFaradi/booksmart.git
+    cd booksmart
+    ```
+2. Installez les dépendances PHP :
+    ```bash
+    composer install
+    ```
+3. Installez les dépendances Node.js :
+    ```bash
+    npm install && npm run build
+    ```
+4. Configurez votre fichier `.env` (copiez `.env.example` et adaptez-le).
+5. Générez la clé d'application :
+    ```bash
+    php artisan key:generate
+    ```
+6. Lancez les migrations et seeders :
+    ```bash
+    php artisan migrate --seed
+    ```
+7. Démarrez le serveur :
+    ```bash
+    php artisan serve
+    ```
+8. (Optionnel) Lancez l'API de recommandation :
+    ```bash
+    python recommendation_api.py
+    ```
 
-```
-ApplicationGestionAi/
-├── 🐘 Laravel (Backend principal)
-│   ├── Gestion des utilisateurs et authentification
-│   ├── CRUD pour livres, adhérents, emprunts
-│   ├── Interface d'administration
-│   └── API REST pour l'application web
-├── 🐍 Python/FastAPI (IA & Recommandations)
-│   ├── Modèle de recommandation TF-IDF
-│   ├── API de recommandations personnalisées
-│   ├── Analyse de similarité cosinus
-│   └── Traitement de texte avancé
-├── 🎨 Frontend (Blade + Tailwind)
+## Structure du projet
+
+- `app/` : Contrôleurs, modèles et logique métier Laravel
+- `resources/views/` : Vues Blade (pages catalogue, réservations, dashboard...)
+- `public/` : Fichiers accessibles publiquement (index.php, assets)
+- `routes/` : Fichiers de routes Laravel
+- `recommendation_model.py` : Modèle de recommandation (Python)
+- `train_and_save_model.py` : Script d'entraînement du modèle
+
+## Auteurs
+- Ayoub Faradi
+- [Contributeurs sur GitHub](https://github.com/AyoubFaradi/booksmart/graphs/contributors)
+
+## Licence
+Ce projet est sous licence MIT.
 │   ├── Interface utilisateur responsive
 │   ├── Dashboard administrateur
 │   ├── Formulaires de recommandations IA
@@ -293,7 +322,7 @@ POST /reservations      # Créer une réservation
 ## 📁 Structure du projet
 
 ```
-ApplicationGestionAi/
+APPBOOK/
 ├── 📁 app/
 │   ├── 📁 Http/Controllers/
 │   │   ├── AdherentController.php
